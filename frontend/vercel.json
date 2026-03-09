@@ -1,0 +1,15 @@
+{
+  "framework": "angular",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/callforfree",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_BACKEND_URL": "@vite_backend_url"
+  }
+}
