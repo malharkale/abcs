@@ -1,0 +1,10 @@
+.home-container {
+  min-height: 100vh;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .room-id-display {
+    font-size: 2.5rem;
+  }
+}

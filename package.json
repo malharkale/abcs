@@ -1,0 +1,26 @@
+{
+  "name": "callforfree",
+  "version": "1.0.0",
+  "description": "Production-ready WhatsApp-style video calling application",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "build": "cd frontend && npm run build && cd ../backend && echo 'Backend ready'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "video-call",
+    "webrtc",
+    "socket.io",
+    "angular",
+    "nodejs"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
