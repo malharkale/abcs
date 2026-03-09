@@ -23,12 +23,19 @@ export class SocketService {
   }
 
   private getBackendUrl(): string {
+    // Check environment variable first
+    const envUrl = (window as any)['VITE_BACKEND_URL'];
+    if (envUrl) {
+      return envUrl;
+    }
+    
     // For development
     if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
       return 'http://localhost:3001';
     }
-    // For production - extract domain from current URL
-    return location.origin.replace(location.hostname, '').replace(location.port, '3001').trim();
+    
+    // For production - fallback to Render URL
+    return 'https://abcs-ulxa.onrender.com';
   }
 
   private setupListeners(): void {
